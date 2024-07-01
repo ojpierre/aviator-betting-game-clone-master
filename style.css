@@ -2,11 +2,12 @@ html,
 body {
     margin: 0;
     padding: 0;
-    background-color: black;
+    background-color: #000814;
     font-family: 'Exo 2', sans-serif;
     box-sizing: border-box;
     width: 100%;
     overflow: hidden;
+    color: #ffffff;
 }
 
 input::-webkit-outer-spin-button,
@@ -54,22 +55,26 @@ input[type=number] {
     font-size: 16px;
     font-weight: 500;
     margin: 0 5px;
+    transition: transform 0.3s;
+}
+
+#last-counters p:hover {
+    transform: scale(1.1);
 }
 
 .blueBorder {
-    color: rgb(52, 180, 255);
-    border-color: rgb(52, 180, 255);
+    color: #3282b8;
+    border-color: #3282b8;
 }
 
 .purpleBorder {
-    color: rgb(145, 62, 248);
-    border-color: rgb(145, 62, 248);
+    color: #3a86ff;
+    border-color: #3a86ff;
 }
 
 .burgundyBorder {
-    color: rgb(192, 23, 180);
-    border-color: rgb(192, 23, 180);
-
+    color: #a4161a;
+    border-color: #a4161a;
 }
 
 #mid-wrapper {
@@ -106,6 +111,21 @@ input[type=number] {
     justify-content: center;
     margin-top: 5px;
     margin-bottom: 20px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 #counterWrapper {
@@ -193,9 +213,9 @@ input[type=number] {
     top: 10%;
     left: 42%;
     font-size: 42px;
-    font-family: Arial, sans-serif;
+    font-family: 'Exo 2', sans-serif;
     font-weight: bold;
-    color: white;
+    color: #00b4d8;
     z-index: 999;
 }
 
@@ -217,13 +237,19 @@ input[type=number] {
     position: relative;
     width: 100%;
     padding: 9px 0 9px 10px;
-    border: 3px solid #fff;
+    border: 3px solid #00b4d8;
     border-radius: 24px;
     background: transparent;
     font-weight: 900;
     font-size: 17px;
-    color: #fff;
+    color: #00b4d8;
     text-transform: uppercase;
+    transition: border-color 0.3s;
+}
+
+#bet-input:focus {
+    border-color: #0077b6;
+    outline: none;
 }
 
 #bet-button {
@@ -232,17 +258,23 @@ input[type=number] {
     padding: 12px 30px;
     border-width: 0;
     border-radius: 24px;
-    background-color: #fb024c;
+    background-color: #00b4d8;
     cursor: pointer;
     color: #ffffff;
     font-weight: 900;
     font-size: 17px;
     text-transform: uppercase;
     margin-left: 30px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#bet-button:hover {
+    background-color: #0077b6;
+    transform: scale(1.05);
 }
 
 #message {
-    color: #fb024c;
+    color: #00b4d8;
     font-size: 16px;
     font-weight: 500;
 }
